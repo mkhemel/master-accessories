@@ -420,6 +420,12 @@
 
 }
 
+@media (min-width: 1600px) {
+    .why-us-grid{
+        padding-right: 60px;
+    }
+}
+
 @media (min-width: 1200px) {
     .navbar-cs > .container-fluid{
         padding: 0 25px;
