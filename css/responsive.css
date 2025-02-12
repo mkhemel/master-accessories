@@ -258,6 +258,16 @@
         line-height: 50px;
     }
 
+    .swiper-wrapper-cs{
+        flex-direction: unset;
+    }
+
+    .swiper-wrapper-cs .swiper-slide{
+        width: calc(33% - 10px) !important;
+        height: unset !important;
+    }
+
+
     .navbar-cs .navbar-brand img{
         height: 45px;
     }

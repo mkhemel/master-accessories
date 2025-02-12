@@ -276,18 +276,18 @@
                          <p class="complex-sub-title">Zone A</p>
                          <p class="section-desc">Our primary production zone is the heart of our operations, where we manufacture our flagship products: Polybags, Sewing Threads, Gum Tapes, and Elastic Units. This facility ensures top-quality output, driving the success of our key offerings.</p>
                      </div>
-                     <div class="">
+                     <div class="d-none d-lg-block">
                          <p class="complex-sub-title">Zone D</p>
                          <p class="section-desc">Complex entrance, our main office, parking, and utility spaces are located in this zone. </p>
                      </div>
                  </div>   
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-4 d-none d-lg-block">
                     <div class="complex-image-wrapper">
                         <img src="./assets/image/industrial-complex-map.svg" alt="Complex" class="complex-image">
                     </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-4 d-none d-lg-block">
                     <div class="">
                         <div class="mb-4">
                             <p class="complex-sub-title">Zone B</p>
@@ -301,7 +301,22 @@
                 </div>
             </div>
         </div>
-        <div class="map-route"></div>
+        <img src="./assets/image/copmlex-phone.png" alt="map" class="w-100 d-block d-lg-none">
+        <div class="container container-wrap d-block d-lg-none">
+            <div class="mb-4">
+                <p class="complex-sub-title">Zone B</p>
+                <p class="section-desc">Serves as our dedicated carton production unit, specializing in the manufacturing of high-quality cartons. This facility plays a crucial role in our packaging solutions for a wide range of RMG applications.</p>
+            </div>
+            <div class="mb-5">
+                <p class="complex-sub-title">Zone C</p>
+                <p class="section-desc">Our dedicated warehouse, ensuring swift and secure operation and an ample space to support our productivity.</p>
+            </div>
+            <div class="">
+                <p class="complex-sub-title">Zone D</p>
+                <p class="section-desc">Complex entrance, our main office, parking, and utility spaces are located in this zone. </p>
+            </div>
+        </div>
+        <div class="map-route d-none d-lg-block"></div>
     </section>
     <section class="section empowering">
         <div class="container container-wrap">
@@ -703,46 +718,91 @@
 </script>
 
 <script>
-    var swiperThumbs = new Swiper(".mySwiper", {
-        spaceBetween: 10,
-        slidesPerView: 3, // Show only 3 thumbnails at a time
-        direction: "vertical",
-        freeMode: true,
-        watchSlidesProgress: true,
-        navigation: {
-            nextEl: ".swiper-button-next-thumbs",
-            prevEl: ".swiper-button-prev-thumbs",
-        },
-    });
+    // var swiperThumbs = new Swiper(".mySwiper", {
+    //     spaceBetween: 10,
+    //     slidesPerView: 3, // Show only 3 thumbnails at a time
+    //     direction: "vertical",
+    //     freeMode: true,
+    //     watchSlidesProgress: true,
+    //     navigation: {
+    //         nextEl: ".swiper-button-next-thumbs",
+    //         prevEl: ".swiper-button-prev-thumbs",
+    //     },
+    // });
+    //
+    // var swiperMain = new Swiper(".mySwiper2", {
+    //     spaceBetween: 10,
+    //     navigation: {
+    //         // nextEl: ".swiper-button-next",
+    //         // prevEl: ".swiper-button-prev",
+    //     },
+    //     thumbs: {
+    //         swiper: swiperThumbs,
+    //     },
+    // });
+    function initSwipers() {
+        var swiperThumbs = new Swiper(".mySwiper", {
+            spaceBetween: 10,
+            slidesPerView: 3, // Show only 3 thumbnails at a time
+            direction: window.innerWidth > 992 ? "vertical" : "horizontal", // Change direction based on screen width
+            freeMode: true,
+            watchSlidesProgress: true,
+            navigation: {
+                nextEl: ".swiper-button-next-thumbs",
+                prevEl: ".swiper-button-prev-thumbs",
+            },
+        });
 
-    var swiperMain = new Swiper(".mySwiper2", {
-        spaceBetween: 10,
-        navigation: {
-            // nextEl: ".swiper-button-next",
-            // prevEl: ".swiper-button-prev",
-        },
-        thumbs: {
-            swiper: swiperThumbs,
-        },
-    });
+        var swiperMain = new Swiper(".mySwiper2", {
+            spaceBetween: 10,
+            thumbs: {
+                swiper: swiperThumbs,
+            },
+        });
+
+        // Update Swiper on window resize
+        window.addEventListener("resize", function () {
+            swiperThumbs.changeDirection(window.innerWidth > 992 ? "vertical" : "horizontal");
+        });
+    }
+
+    // Initialize Swipers when the page loads
+    initSwipers();
+
 </script>
 
 <script>
-    window.onload = function () {
-        const mainSwipper= document.querySelector('.mySwiper2 .swiper-slide-active');
-        let divHeight;
-        if (mainSwipper) {
-            const innerDiv = mainSwipper.querySelector('div');
-            console.log(innerDiv);
-            if (innerDiv) {
-                divHeight = `${innerDiv.clientHeight}px`;
+    function updateThumbsHeight() {
+        if (window.innerWidth > 992) { // Only apply height above 992px
+            const mainSwipper = document.querySelector('.mySwiper2 .swiper-slide-active');
+            let divHeight;
+
+            if (mainSwipper) {
+                const innerDiv = mainSwipper.querySelector('div');
+                if (innerDiv) {
+                    divHeight = `${innerDiv.clientHeight}px`;
+                }
+            }
+
+            const thumbsSwipper = document.querySelector('.mySwiper');
+            if (mainSwipper && thumbsSwipper && divHeight) {
+                thumbsSwipper.style.height = divHeight;
+            }
+        } else {
+            // Reset height below 992px
+            const thumbsSwipper = document.querySelector('.mySwiper');
+            if (thumbsSwipper) {
+                thumbsSwipper.style.height = 'auto';
             }
         }
-        const thumbsSwipper= document.querySelector('.mySwiper');
-        if (mainSwipper && thumbsSwipper && divHeight) {
-            thumbsSwipper.style.height = divHeight;
-        }
     }
+
+    // Run function on page load
+    window.onload = updateThumbsHeight;
+
+    // Run function on resize to update height dynamically
+    window.addEventListener('resize', updateThumbsHeight);
+
 </script>
 
 
