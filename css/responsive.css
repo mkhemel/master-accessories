@@ -270,6 +270,7 @@
 
     .navbar-cs .navbar-brand img{
         height: 45px;
+        width: 48.52px;
     }
 
     .nav-container{
@@ -454,12 +455,30 @@
         margin-left: -15px;
     }
 
+    .product-image-wrapper{
+        height: 250px;
+    }
+
+    .exp-image-wrapper-3,
+    .exp-image-wrapper-2{
+        min-height: 200px;
+    }
+
 
 }
 
 @media only screen and (max-width: 576px) {
     .home-content-wrapper{
         margin-top: 0px;
+    }
+
+    .swiper-wrapper-cs .swiper-slide {
+        width: calc(50% - 10px) !important;
+        height: 85px !important;
+    }
+
+    .product-image-wrapper{
+        height: 200px;
     }
 
     .brand-image-group{
@@ -476,6 +495,7 @@
     }
     .navbar-cs .navbar-brand img{
         height: 45px;
+        width: 48.52px;
     }
     .section{
         padding: 40px 0;

@@ -792,7 +792,7 @@
     function initSwipers() {
         var swiperThumbs = new Swiper(".mySwiper", {
             spaceBetween: 10,
-            slidesPerView: 3, // Show only 3 thumbnails at a time
+            slidesPerView: window.innerWidth > 576 ? 3 : 2, // Show only 3 thumbnails at a time
             direction: window.innerWidth > 992 ? "vertical" : "horizontal", // Change direction based on screen width
             freeMode: true,
             watchSlidesProgress: true,
