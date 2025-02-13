@@ -178,6 +178,10 @@ html, body{
 
 }
 
+#read-more-btn{
+    display: none;
+}
+
 .navbar-cs .nav-item .nav-link{
     font-family: "Archivo", serif;
     font-size: 20px;
@@ -852,6 +856,10 @@ html, body{
     text-align: left;
     margin-top: 20px;
     margin-bottom: 10px;
+}
+
+.navbar-toggler{
+    border: none;
 }
 
 .contact-deg{

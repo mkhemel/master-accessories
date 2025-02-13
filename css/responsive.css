@@ -40,6 +40,7 @@
 
     .section-desc{
         font-size: 14px;
+        line-height: 18px;
     }
 
     .btn.btn-primary{
@@ -161,6 +162,63 @@
 }
 
 @media (max-width: 991.98px) {
+
+    .navbar.navbar-cs:not(.fixed-nav) .navbar-collapse{
+        background-color: #FFFFFF3D;
+    }
+
+    .navbar-collapse .navbar-nav li{
+        border-bottom: 1px solid #FFFFFF80;
+        width: 100%;
+    }
+
+    .navbar-collapse .navbar-nav{
+        margin-bottom: 0 !important;
+    }
+
+    .navbar-cs .nav-item .nav-link:hover::after{
+        display: none;
+    }
+
+    .navbar-cs .nav-item .nav-link{
+        font-weight: 500 !important;
+        font-size: 13px;
+        line-height: 17.55px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        justify-content: end;
+        display: flex;
+        padding-right: 30px;
+    }
+
+    .navbar-cs .nav-item .nav-link span{
+        min-width: 60px;
+        align-items: start;
+        display: flex;
+    }
+
+    .container-fluid.nav-container{
+        padding: 0;
+    }
+
+    .container-fluid.nav-container .navbar-cs > .container-fluid{
+        padding: 0;
+    }
+
+    .container-fluid.nav-container .navbar-cs > .container-fluid .navbar-brand{
+        margin-left: .75rem;
+    }
+
+    .container-fluid.nav-container .navbar-cs > .container-fluid .navbar-toggler{
+        margin-right: .75rem;
+    }
+
+    .navbar-toggler:focus {
+        text-decoration: none;
+        outline: 0;
+        box-shadow: none;
+    }
+
     .home-header-title{
         font-size: 32px;
         line-height: 40px;
@@ -310,6 +368,11 @@
         line-height: 40px;
         color: #ffffff;
         border-radius: 16px;
+    }
+
+    .exp-image-wrapper-1{
+        min-height: 200px;
+        margin-bottom: 15px;
     }
 
 }
@@ -472,13 +535,51 @@
         margin-top: 0px;
     }
 
+    .mySwiper .swiper-wrapper.swiper-wrapper-cs{
+        display: flex;
+        flex-wrap: wrap;
+
+    }
+
+
+    .swiper-button-next.swiper-button-next-thumbs,
+    .swiper-button-prev.swiper-button-prev-thumbs{
+        display: none;
+    }
+
+    .form-control-cs-email{
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+    .contact-btn.contact-btn-2{
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+    .complex-sub-title{
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 22px;
+        color: #ffffff;
+    }
+
+    .read-more-text.hide{
+        display: none;
+    }
+
+    #read-more-btn{
+        display: inline-block;
+    }
+
     .swiper-wrapper-cs .swiper-slide {
         width: calc(50% - 10px) !important;
-        height: 85px !important;
+        height: 147px !important;
+        margin-bottom: 10px;
     }
 
     .product-image-wrapper{
-        height: 200px;
+        height: 99px;
     }
 
     .brand-image-group{
@@ -519,17 +620,22 @@
     }
 
     .home-header-title{
-        font-size: 28px;
-        line-height: 35px;
+        font-size: 24px;
+        line-height: 26px;
+    }
+
+    .home-header-desc{
+        max-width: 272px;
     }
 
     .sub-title {
-        font-size: 14px;
-        line-height: 18px;
+        font-size: 12px;
+        line-height: 15px;
     }
 
     .sub-title.sub-title-why{
         font-size: 16px;
+        font-weight: 500 !important;
     }
 
     .client-sub-title{
@@ -594,9 +700,10 @@
     }
 
     .contact-subtitle{
-        font-size: 15px;
+        font-size: 24px;
         margin-bottom: 30px;
     }
+
 
     .contact-submit-btn,
     .feature-end-card{
