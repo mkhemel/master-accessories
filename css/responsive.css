@@ -737,6 +737,26 @@
         height: 40px;
     }
 
+    .product-name{
+        font-size: 13px;
+        line-height: 15px;
+        padding: 8px 15px;
+        bottom: 7px;
+        left: 7px;
+    }
+
+    .section-desc-trim{
+        //after 3 lines hide and dot will be shown
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow:hidden;
+
+
+    }
+
 
 }
 
