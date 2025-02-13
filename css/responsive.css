@@ -738,11 +738,11 @@
     }
 
     .product-name{
-        font-size: 13px;
-        line-height: 15px;
+        font-size: 12px;
+        line-height: 13px;
         padding: 8px 15px;
-        bottom: 7px;
-        left: 7px;
+        bottom: 5px;
+        left: 5px;
     }
 
     .section-desc-trim{
