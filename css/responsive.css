@@ -745,6 +745,9 @@
         left: 5px;
     }
 
+    .contact-subtitle.contact-subtitle-2{
+        font-size: 16px;
+    }
     .section-desc-trim{
         //after 3 lines hide and dot will be shown
         overflow: hidden;
