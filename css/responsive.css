@@ -538,6 +538,7 @@
     .mySwiper .swiper-wrapper.swiper-wrapper-cs{
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
 
     }
 
